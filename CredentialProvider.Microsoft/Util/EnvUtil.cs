@@ -36,6 +36,8 @@ namespace NuGetCredentialProvider.Util
         public const string MsalFileCacheEnvVar = "NUGET_CREDENTIALPROVIDER_MSAL_FILECACHE_ENABLED";
         public const string MsalFileCacheLocationEnvVar = "NUGET_CREDENTIALPROVIDER_MSAL_FILECACHE_LOCATION";
 
+        public const string KeyVaultUrlEnvVar = "NUGET_CREDENTIALPROVIDER_KEYVAULT_URL";
+
         private static readonly string LocalAppDataLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.Create), "MicrosoftCredentialProvider");
 
         public static string AdalTokenCacheLocation { get; } = Path.Combine(LocalAppDataLocation, "ADALTokenCache.dat");

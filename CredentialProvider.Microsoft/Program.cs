@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using NuGet.Common;
 using NuGet.Protocol.Plugins;
 using NuGetCredentialProvider.CredentialProviders;
+using NuGetCredentialProvider.CredentialProviders.KeyVault;
 using NuGetCredentialProvider.CredentialProviders.Vsts;
 using NuGetCredentialProvider.CredentialProviders.VstsBuildTask;
 using NuGetCredentialProvider.CredentialProviders.VstsBuildTaskServiceEndpoint;
@@ -98,6 +99,7 @@ namespace NuGetCredentialProvider
 
             List<ICredentialProvider> credentialProviders = new List<ICredentialProvider>
             {
+                new VstsKeyVaultCredentialProvider(multiLogger),
                 new VstsBuildTaskServiceEndpointCredentialProvider(multiLogger),
                 new VstsBuildTaskCredentialProvider(multiLogger),
                 new VstsCredentialProvider(multiLogger, authUtil, bearerTokenProvidersFactory, vstsSessionTokenProvider),
